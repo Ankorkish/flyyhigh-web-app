@@ -35,6 +35,7 @@
 }
 .text {
   flex-grow: 1;
+  color: #000;
   font-weight: 600;
   font-family: "Inter Variable", sans-serif;
 }

@@ -12,7 +12,7 @@ function Pricing() {
         <Navigation />
         <Contact />
         <Info
-          header={"Pricng"}
+          header={"Pricing"}
           text={
             "Explore our flexible pricing plans, designed for everyone from solo presenters to large enterprises. Choose from Basic, Pro, or Premium packages to enhance your presentations with advanced features, increased customization, and dedicated support. Find a plan that fits your budget and unlocks the full potential of your ideas."
           }

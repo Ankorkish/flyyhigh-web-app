@@ -1,0 +1,22 @@
+.main {
+  background-color: #1b1c20;
+  padding: 2rem;
+  padding-left: 2.9rem;
+  padding-top: 2.4rem;
+  position: relative;
+}
+.options {
+  margin-top: 2rem;
+
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+.options a {
+  color: #767676;
+  text-decoration: none;
+}
+
+.options :global(.active) {
+  color: #fff;
+}
