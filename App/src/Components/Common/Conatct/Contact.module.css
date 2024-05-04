@@ -1,0 +1,24 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  color: white;
+  transform: translateY(-50%);
+  gap: 1rem;
+}
+.contacts .bubble {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 3rem;
+  width: 3rem;
+  border: #fff solid 1px;
+
+  border-radius: 100%;
+  position: relative;
+  backdrop-filter: blur(0.1rem);
+  background-color: #ffffff10;
+}

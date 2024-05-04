@@ -1,0 +1,31 @@
+.nav {
+  width: 100%;
+  display: grid;
+  padding: 1.8rem;
+  padding-top: 2.4rem;
+  padding-right: 2rem;
+  padding-left: 2.9rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  justify-content: space-between;
+  align-items: end;
+}
+.mid {
+  display: flex;
+  gap: 2rem;
+  justify-self: center;
+}
+.mid * {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #dcdcdc;
+}
+.login {
+  justify-self: right;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #dcdcdc;
+}
+.mid :global(.active) {
+  color: white;
+}
