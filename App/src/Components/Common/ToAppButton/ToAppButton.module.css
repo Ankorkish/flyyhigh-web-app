@@ -1,12 +1,14 @@
 .wrapper {
   position: absolute;
   bottom: 0;
-  left: 3rem;
+  padding-left: 3rem;
+  padding-right: 2rem;
   height: 8rem;
-  width: 60%;
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 2rem;
+  z-index: 1;
 }
 .button {
   display: flex;
@@ -14,7 +16,7 @@
   justify-content: end;
 
   height: 3rem;
-  width: 14rem;
+  width: 12rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-right: 0.25rem;
@@ -39,4 +41,12 @@
 .message {
   color: #a8a8a8;
   font-weight: 300;
+  width: 50%;
+}
+.exploreMore {
+  margin-left: auto;
+  color: #fff;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
 }

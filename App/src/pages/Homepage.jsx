@@ -7,7 +7,7 @@ import styles from "./main.module.css";
 
 function Homepage() {
   return (
-    <section>
+    <section style={{ zIndex: "-12" }}>
       <div className={styles.bg}>
         <Navigation />
         <Contact />

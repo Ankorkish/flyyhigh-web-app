@@ -15,4 +15,5 @@
   bottom: 6rem;
   left: 3rem;
   width: 60%;
+  z-index: 1;
 }

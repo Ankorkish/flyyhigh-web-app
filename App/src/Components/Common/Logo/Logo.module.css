@@ -2,4 +2,5 @@
   font-family: "Inter Variable", sans-serif;
   color: #ffff;
   justify-self: left;
+  z-index: 1;
 }

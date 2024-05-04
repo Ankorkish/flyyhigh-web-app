@@ -9,22 +9,28 @@
 
   justify-content: space-between;
   align-items: end;
+  z-index: 2;
+  position: static;
 }
 .mid {
   display: flex;
   gap: 2rem;
   justify-self: center;
+  position: static;
 }
 .mid * {
   font-size: 1rem;
   text-decoration: none;
   color: #dcdcdc;
+  z-index: 2;
+  position: static;
 }
 .login {
   justify-self: right;
   font-size: 1rem;
   text-decoration: none;
   color: #dcdcdc;
+  z-index: 1;
 }
 .mid :global(.active) {
   color: white;
