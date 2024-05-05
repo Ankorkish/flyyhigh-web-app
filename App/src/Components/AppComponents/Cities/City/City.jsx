@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import styles from "./City.module.css";
+import { useCities } from "../../../../Contexts/CitiesContext";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -10,11 +11,14 @@ const formatDate = (date) =>
     year: "numeric",
     weekday: "long",
   }).format(new Date(date));
+
 City.propTypes = {
   city: PropTypes.object,
 };
 
 function City({ city }) {
+  const { currentCity } = useCities();
+
   return (
     <Link
       to={`/app/cities/${city.id}?lat=${city.position.lat}&lng=${city.position.lng}`}
@@ -27,6 +31,59 @@ function City({ city }) {
         <div className={styles.date}>{formatDate(city.date)}</div>
       </div>
       <div className={styles.delWrapper}>
+        {currentCity.id === city.id && (
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 34 38"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g filter="url(#filter0_d_85_22)">
+              <path
+                d="M20.4002 8.50001L20.0602 6.80001C19.9327 6.14834 19.3518 5.66667 18.6718 5.66667H8.50016C7.721 5.66667 7.0835 6.30417 7.0835 7.08334V28.3333C7.0835 29.1125 7.721 29.75 8.50016 29.75C9.27933 29.75 9.91683 29.1125 9.91683 28.3333V19.8333H17.8502L18.1902 21.5333C18.3177 22.1992 18.8985 22.6667 19.5785 22.6667H26.9168C27.696 22.6667 28.3335 22.0292 28.3335 21.25V9.91667C28.3335 9.13751 27.696 8.50001 26.9168 8.50001H20.4002Z"
+                fill="#858585"
+              />
+            </g>
+            <defs>
+              <filter
+                id="filter0_d_85_22"
+                x="-4"
+                y="0"
+                width="42"
+                height="42"
+                filterUnits="userSpaceOnUse"
+                colorInterpolationFilters="sRGB"
+              >
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                <feColorMatrix
+                  in="SourceAlpha"
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                  result="hardAlpha"
+                />
+                <feOffset dy="4" />
+                <feGaussianBlur stdDeviation="2" />
+                <feComposite in2="hardAlpha" operator="out" />
+                <feColorMatrix
+                  type="matrix"
+                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                />
+                <feBlend
+                  mode="normal"
+                  in2="BackgroundImageFix"
+                  result="effect1_dropShadow_85_22"
+                />
+                <feBlend
+                  mode="normal"
+                  in="SourceGraphic"
+                  in2="effect1_dropShadow_85_22"
+                  result="shape"
+                />
+              </filter>
+            </defs>
+          </svg>
+        )}
         <button className={styles.delButton}>
           <svg
             width="11"

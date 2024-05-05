@@ -1,16 +1,64 @@
-import { useNavigate } from "react-router-dom";
+import BackButton from "../../Common/BackButton/BackButton";
 import styles from "./Form.module.css";
+import { useUrlPosition } from "../../../hooks/useUrlPosition";
+import { useEffect, useState } from "react";
 
 function Form() {
-  const navigate = useNavigate();
+  const [lng, lat] = useUrlPosition();
 
-  function handleBack(e) {
+  const [cityName, setCityName] = useState("");
+  const [country, setCountry] = useState("");
+  const [time, setTime] = useState("");
+  const [note, setNote] = useState("");
+  const [emoji, setEmoji] = useState("");
+
+  const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
+  const [geocodingError, setGeocodingError] = useState("");
+
+  useEffect(
+    function () {
+      async function fetchCityData() {
+        if (!lat && !lng) return null;
+        try {
+          setGeocodingError("");
+          setIsLoadingGeocoding(true);
+          const res = await fetch(
+            `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}`
+          );
+          const data = await res.json();
+
+          if (!data.countryCode) {
+            throw new Error(
+              "That does nor seem to be a country, Click somewhere else."
+            );
+          }
+          setCityName(data.city || data.locality || "");
+          setCountry(data.countryName);
+          setEmoji();
+        } catch (e) {
+          setGeocodingError(e.message);
+        } finally {
+          setIsLoadingGeocoding(false);
+        }
+      }
+      fetchCityData();
+    },
+    [lat, lng]
+  );
+
+  if (geocodingError !== "") {
+    return <div>{geocodingError}</div>;
+  }
+  if (isLoadingGeocoding) {
+    return <div>Loading...</div>;
+  }
+
+  function handleSubmit(e) {
     e.preventDefault();
-    navigate(-1);
   }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h2 className={styles.header}>Add visited city to the map</h2>
       <p className={styles.message}>
         here you can add waypoint to the map, after submitting the form the city
@@ -18,34 +66,22 @@ function Form() {
       </p>
       <div className={styles.inputGroup}>
         <label>City name</label>
-        <input type="text" />
+        <input
+          type="text"
+          value={cityName}
+          onInput={(e) => setCityName(e.value)}
+        />
       </div>
       <div className={styles.inputGroup}>
         <label>When did you go to [city name]?</label>
-        <input type="text" />
+        <input type="text" value={time} onInput={(e) => setTime(e.value)} />
       </div>
       <div className={styles.inputGroup}>
         <label>When did you go to [city name]?</label>
-        <textarea></textarea>
+        <textarea value={note} onInput={(e) => setNote(e.value)}></textarea>
       </div>
       <div className={styles.nav}>
-        <button className={styles.btn} onClick={handleBack}>
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 23 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M21.5666 10.8256C21.5666 10.5361 21.4516 10.2585 21.2469 10.0537C21.0422 9.84903 20.7646 9.73402 20.4751 9.73402L4.72866 9.73402L11.5992 2.8657C11.8041 2.66072 11.9193 2.38272 11.9193 2.09285C11.9193 1.80297 11.8041 1.52497 11.5992 1.32C11.3942 1.11502 11.1162 0.999872 10.8263 0.999872C10.5364 0.999872 10.2584 1.11502 10.0535 1.32L1.3207 10.0528C1.21904 10.1542 1.13839 10.2746 1.08336 10.4072C1.02833 10.5399 1 10.682 1 10.8256C1 10.9692 1.02833 11.1114 1.08336 11.244C1.13839 11.3766 1.21904 11.4971 1.3207 11.5985L10.0535 20.3312C10.155 20.4327 10.2755 20.5132 10.4081 20.5682C10.5407 20.6231 10.6828 20.6514 10.8263 20.6514C11.1162 20.6514 11.3942 20.5362 11.5992 20.3312C11.8041 20.1263 11.9193 19.8483 11.9193 19.5584C11.9193 19.2685 11.8041 18.9905 11.5992 18.7855L4.72866 11.9172L20.4751 11.9172C20.7646 11.9172 21.0422 11.8022 21.2469 11.5975C21.4516 11.3928 21.5666 11.1151 21.5666 10.8256Z"
-              fill="white"
-            />
-          </svg>
-          Go back
-        </button>
+        <BackButton></BackButton>
         <button type="submit" className={styles.btn}>
           Send
           <svg

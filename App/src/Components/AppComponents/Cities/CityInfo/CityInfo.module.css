@@ -1,0 +1,54 @@
+.dataGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.header {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.label {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.2rem;
+  color: #adadad;
+}
+.value {
+  font-weight: 400;
+}
+div.value {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 0.1rem;
+}
+a.value {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 0.1rem;
+  color: #c9cbff;
+}
+.message {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.9rem;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition-duration: 0.1s;
+}
+.btn:hover {
+  gap: 0.8rem;
+}
+.data {
+  margin-bottom: 2rem;
+}

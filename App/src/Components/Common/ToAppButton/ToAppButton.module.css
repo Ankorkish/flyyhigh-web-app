@@ -74,6 +74,3 @@
 .exploreMore :global(svg) {
   transition-duration: 0.1s;
 }
-.exploreMore:hover :global(svg) {
-  transform: translateY(5px) scale(1.2);
-}
