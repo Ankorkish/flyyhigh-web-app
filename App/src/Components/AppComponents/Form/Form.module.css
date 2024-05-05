@@ -1,0 +1,54 @@
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+.inputGroup :global(input),
+.inputGroup :global(textarea) {
+  width: 100%;
+  background-color: #16151a;
+  border: #2a2b31 1px solid;
+  height: 2.2rem;
+  border-radius: 3px;
+  padding: 0.5rem;
+  transition-duration: 0.1s;
+}
+.inputGroup :global(input:focus),
+.inputGroup :global(textarea:focus) {
+  outline: none;
+  border-bottom: 1px #fff solid;
+}
+.inputGroup :global(textarea) {
+  height: 8.8rem;
+  resize: none;
+}
+.inputGroup :global(label) {
+  font-size: 0.9rem;
+  font-weight: 200;
+  margin-bottom: 0.3rem;
+}
+.header {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+.message {
+  font-size: 0.9rem;
+  font-weight: 300;
+  margin-bottom: 0.9rem;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition-duration: 0.1s;
+}
+.btn:hover {
+  gap: 0.8rem;
+}

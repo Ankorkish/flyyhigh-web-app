@@ -1,12 +1,12 @@
 .country {
   background-color: #111014;
-  border-right: 1px #373840 solid;
-  border-bottom: 1px #373840 solid;
+  border: 1px #373840 solid;
   position: relative;
   padding: 0.5rem;
   display: flex;
   justify-content: space-between;
   font-size: 0.9rem;
+  border-radius: 3px;
 }
 .amount {
   position: absolute;

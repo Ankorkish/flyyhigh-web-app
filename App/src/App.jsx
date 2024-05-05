@@ -9,6 +9,7 @@ import CountriesList from "./Components/AppComponents/Countries/CountriesList/Co
 import LogoProvider from "./Contexts/LogoContext";
 import { useEffect, useState } from "react";
 import CityInfo from "./Components/AppComponents/Cities/CityInfo/CityInfo";
+import Form from "./Components/AppComponents/Form/Form";
 
 const BASE_URL = "http://localhost:8000/cities";
 
@@ -49,7 +50,9 @@ function App() {
             path="countries"
             element={<CountriesList cities={cities} isLoading={isLoading} />}
           />
+          <Route path="form" element={<Form />} />
         </Route>
+
         <Route path="login" element={<Login />} />
       </Routes>
     </LogoProvider>

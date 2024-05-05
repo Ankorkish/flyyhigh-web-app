@@ -1,6 +1,6 @@
 .city {
   background-color: #111014;
-  border-bottom: #2a2b31 1px solid;
+  border: #2a2b31 1px solid;
   height: 4rem;
   padding-left: 1rem;
   padding-right: 0;
@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
+  border-radius: 3px;
 }
 .cityName {
   font-size: 1.1rem;

@@ -1,5 +1,5 @@
 .cityList {
-  border-left: 1px #373840 solid;
-  border-right: 1px #373840 solid;
-  border-top: 1px #373840 solid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
