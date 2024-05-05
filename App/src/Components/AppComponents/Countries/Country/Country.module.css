@@ -1,0 +1,27 @@
+.country {
+  background-color: #111014;
+  border-right: 1px #373840 solid;
+  border-bottom: 1px #373840 solid;
+  position: relative;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+.amount {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+
+  transform: translateX(-50%) translateY(-50%);
+  font-size: 2.6rem;
+  font-weight: 700;
+  font-family: "Familjen Grotesk Variable", sans-serif;
+}
+.amount .message {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #c5c3c3;
+}

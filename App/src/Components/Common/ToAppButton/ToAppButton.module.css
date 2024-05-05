@@ -22,7 +22,9 @@
   padding-right: 0.25rem;
   border-radius: 88rem;
   border: none;
+  transition-duration: 0.1s;
 }
+
 .bubble {
   background-color: black;
   height: 2.5rem;
@@ -32,12 +34,26 @@
   display: grid;
   align-items: center;
   justify-content: center;
+  transition-duration: 0.3s;
+}
+.button:hover .bubble {
+  transform: scale(1.8) translateX(-6px);
+}
+.bubble * {
+  transition-duration: 0.2s;
+}
+.button:hover .bubble * {
+  transform: scale(1.05);
 }
 .text {
   flex-grow: 1;
   color: #000;
   font-weight: 600;
   font-family: "Inter Variable", sans-serif;
+  transition-duration: 0.3s;
+}
+.button:hover .text {
+  transform: translateX(-4px);
 }
 .message {
   color: #a8a8a8;
@@ -50,4 +66,14 @@
   display: flex;
   gap: 0.8rem;
   align-items: center;
+  transition-duration: 0.1s;
+}
+.exploreMore:hover {
+  text-decoration: underline;
+}
+.exploreMore :global(svg) {
+  transition-duration: 0.1s;
+}
+.exploreMore:hover :global(svg) {
+  transform: translateY(5px) scale(1.2);
 }

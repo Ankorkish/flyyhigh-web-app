@@ -6,7 +6,7 @@ import styles from "./Navigation.module.css";
 function Navigation() {
   return (
     <nav className={styles.nav}>
-      <Logo></Logo>
+      <Logo key="logo"></Logo>
 
       <div className={styles.mid}>
         <NavLink to="/"> Home </NavLink>

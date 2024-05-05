@@ -20,7 +20,7 @@ function Contact() {
       <div className={styles.bubble}>
         <svg
           width="13"
-          height="113"
+          height="13"
           viewBox="0 0 27 27"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

@@ -24,6 +24,14 @@
   color: #dcdcdc;
   z-index: 2;
   position: static;
+
+  transition-duration: 0.1s;
+}
+.mid *:hover {
+  transform: scale(1.05);
+}
+.mid *:active {
+  transform: scale(1.03);
 }
 .login {
   justify-self: right;
