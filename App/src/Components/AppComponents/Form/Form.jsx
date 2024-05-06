@@ -2,8 +2,21 @@ import BackButton from "../../Common/BackButton/BackButton";
 import styles from "./Form.module.css";
 import { useUrlPosition } from "../../../hooks/useUrlPosition";
 import { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
 
+import "react-datepicker/dist/react-datepicker.css";
+import { useCities } from "../../../Contexts/CitiesContext";
+import { useNavigate } from "react-router-dom";
+export function convertToEmoji(countryCode) {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split("")
+    .map((char) => 127397 + char.charCodeAt());
+  return String.fromCodePoint(...codePoints);
+}
 function Form() {
+  const { createCity } = useCities();
+
   const [lng, lat] = useUrlPosition();
 
   const [cityName, setCityName] = useState("");
@@ -14,6 +27,7 @@ function Form() {
 
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [geocodingError, setGeocodingError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(
     function () {
@@ -29,12 +43,12 @@ function Form() {
 
           if (!data.countryCode) {
             throw new Error(
-              "That does nor seem to be a country, Click somewhere else."
+              "That does not seem to be a country, Click somewhere else."
             );
           }
           setCityName(data.city || data.locality || "");
           setCountry(data.countryName);
-          setEmoji();
+          setEmoji(convertToEmoji(data.countryCode));
         } catch (e) {
           setGeocodingError(e.message);
         } finally {
@@ -53,8 +67,18 @@ function Form() {
     return <div>Loading...</div>;
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    let city = {
+      cityName: cityName,
+      country: country,
+      emoji: emoji,
+      date: time,
+      notes: note,
+      position: { lat, lng },
+    };
+    await createCity(city);
+    navigate("/app/cities");
   }
 
   return (
@@ -69,16 +93,23 @@ function Form() {
         <input
           type="text"
           value={cityName}
-          onInput={(e) => setCityName(e.value)}
+          onChange={(e) => setCityName(e.value)}
         />
       </div>
       <div className={styles.inputGroup}>
         <label>When did you go to [city name]?</label>
-        <input type="text" value={time} onInput={(e) => setTime(e.value)} />
+        <DatePicker
+          selected={time}
+          onChange={(date) => setTime(date)}
+          dateFormat={"dd.MM.YYYY"}
+        />
       </div>
       <div className={styles.inputGroup}>
         <label>When did you go to [city name]?</label>
-        <textarea value={note} onInput={(e) => setNote(e.value)}></textarea>
+        <textarea
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        ></textarea>
       </div>
       <div className={styles.nav}>
         <BackButton></BackButton>

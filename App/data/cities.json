@@ -1,18 +1,6 @@
 {
   "cities": [
     {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
-      "position": {
-        "lat": 40.466359,
-        "lng": -3.713379
-      },
-      "id": 17806751
-    },
-    {
       "cityName": "Barcelona",
       "country": "Spain",
       "emoji": "🇪🇸",
@@ -22,19 +10,7 @@
         "lat": 41.3851,
         "lng": 2.1734
       },
-      "id": 17806752
-    },
-    {
-      "cityName": "Seville",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-17T10:22:53.976Z",
-      "notes": "Rich history!",
-      "position": {
-        "lat": 37.3891,
-        "lng": -5.9845
-      },
-      "id": 17806753
+      "id": "17806752"
     },
     {
       "cityName": "Berlin",
@@ -46,9 +22,8 @@
         "lat": 52.535868,
         "lng": 13.376934
       },
-      "id": 98443197
+      "id": "98443197"
     },
-
     {
       "cityName": "Hamburg",
       "country": "Germany",
@@ -59,7 +34,7 @@
         "lat": 53.5511,
         "lng": 9.9937
       },
-      "id": 98443199
+      "id": "98443199"
     },
     {
       "cityName": "London",
@@ -71,68 +46,79 @@
         "lat": 51.507351,
         "lng": -0.127758
       },
-      "id": 2345678
+      "id": "2345678"
     },
     {
-      "cityName": "Edinburgh",
-      "country": "United Kingdom",
-      "emoji": "🇬🇧",
-      "date": "2027-11-12T12:12:12.121Z",
-      "notes": "Historic and beautiful!",
-      "position": {
-        "lat": 55.9533,
-        "lng": -3.1883
-      },
-      "id": 2345679
-    },
-
-    {
-      "cityName": "Paris",
+      "id": "2b10",
+      "cityName": "Loches",
       "country": "France",
       "emoji": "🇫🇷",
-      "date": "2027-08-21T10:45:32.621Z",
-      "notes": "J'adore cette ville!",
+      "date": "2024-05-06T22:00:00.000Z",
+      "notes": "dawdawdawd",
       "position": {
-        "lat": 48.856697,
-        "lng": 2.351462
-      },
-      "id": 7890123
+        "lat": "47.11544640115067",
+        "lng": "0.9571427556879454"
+      }
     },
     {
-      "cityName": "Lyon",
+      "id": "6b1a",
+      "cityName": "Parma",
+      "country": "Italy",
+      "emoji": "🇮🇹",
+      "date": "2024-05-15T22:00:00.000Z",
+      "notes": "Nice place",
+      "position": {
+        "lat": "44.80938440885569",
+        "lng": "10.33912479751679"
+      }
+    },
+    {
+      "id": "5791",
+      "cityName": "Rozhovice",
+      "country": "Czechia",
+      "emoji": "🇨🇿",
+      "date": "2024-05-07T22:00:00.000Z",
+      "notes": "wow!",
+      "position": {
+        "lat": "49.98007452463288",
+        "lng": "15.703185607749568"
+      }
+    },
+    {
+      "id": "34ef",
+      "cityName": "Bouzeron",
       "country": "France",
       "emoji": "🇫🇷",
-      "date": "2027-08-22T11:45:32.621Z",
-      "notes": "Gastronomic delight!",
+      "date": "2024-04-28T22:00:00.000Z",
+      "notes": "awesome",
       "position": {
-        "lat": 45.764,
-        "lng": 4.8357
-      },
-      "id": 7890124
+        "lat": "46.89178194019642",
+        "lng": "4.726949756297994"
+      }
     },
     {
-      "cityName": "Marseille",
-      "country": "France",
-      "emoji": "🇫🇷",
-      "date": "2027-08-23T12:45:32.621Z",
-      "notes": "Sunny and vibrant!",
+      "id": "822e",
+      "cityName": "Kassel",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2024-05-07T22:00:00.000Z",
+      "notes": "Awesome place",
       "position": {
-        "lat": 43.2965,
-        "lng": 5.3698
-      },
-      "id": 7890125
+        "lat": "51.28316013019058",
+        "lng": "9.448242187500002"
+      }
     },
     {
-      "cityName": "New York City",
-      "country": "United States",
-      "emoji": "🇺🇸",
-      "date": "2027-09-15T20:20:20.202Z",
-      "notes": "The Big Apple!",
+      "id": "7621",
+      "cityName": "Wurzburg",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2024-05-14T22:00:00.000Z",
+      "notes": "my friend lives here!",
       "position": {
-        "lat": 40.712776,
-        "lng": -74.005974
-      },
-      "id": 5678901
+        "lat": "49.81068016442343",
+        "lng": "9.986572265625002"
+      }
     }
   ]
 }

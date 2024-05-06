@@ -7,6 +7,10 @@
   justify-content: space-between;
   font-size: 0.9rem;
   border-radius: 3px;
+  transition-duration: 0.1s;
+}
+.country:hover {
+  background-color: #19171d;
 }
 .amount {
   position: absolute;

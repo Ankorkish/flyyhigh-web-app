@@ -9,6 +9,10 @@
   justify-content: space-between;
   text-decoration: none;
   border-radius: 3px;
+  transition-duration: 0.1s;
+}
+.city:hover {
+  background-color: #19171d;
 }
 .cityName {
   font-size: 1.1rem;

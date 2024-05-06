@@ -17,7 +17,12 @@ City.propTypes = {
 };
 
 function City({ city }) {
-  const { currentCity } = useCities();
+  const { currentCity, deleteCity } = useCities();
+
+  function handleDelete(e) {
+    e.preventDefault();
+    deleteCity(city.id);
+  }
 
   return (
     <Link
@@ -84,7 +89,7 @@ function City({ city }) {
             </defs>
           </svg>
         )}
-        <button className={styles.delButton}>
+        <button className={styles.delButton} onClick={handleDelete}>
           <svg
             width="11"
             height="12"

@@ -1,6 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import { Icon } from "leaflet";
+
+const MarkIcon = new Icon({
+  iconUrl: "/public/gis_poi-alt.svg",
+  iconSize: [35, 35], // size of the icon
+  iconAnchor: [15, 30], // point of the icon which will correspond to marker's location
+  popupAnchor: [2, -30], // point from which the popup should open relative to the iconAnchor
+});
+
 import {
   MapContainer,
   TileLayer,
@@ -34,7 +43,7 @@ function Map() {
         url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
       />
       {cities.map((el) => (
-        <Marker position={el.position} key={el.id}>
+        <Marker position={el.position} key={el.id} icon={MarkIcon}>
           <Popup>
             <span style={{ color: "black" }}>
               {el.notes === "" ? "no comments" : el.notes}
@@ -61,7 +70,7 @@ ChangeCenter.propTypes = {
 
 function ChangeCenter({ position }) {
   const map = useMap();
-  map.setView(position, 7);
+  map.setView(position);
   return null;
 }
 
