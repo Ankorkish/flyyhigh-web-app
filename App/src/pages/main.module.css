@@ -22,10 +22,31 @@
   background-repeat: no-repeat;
   filter: grayscale(100%);
   aspect-ratio: 19/9;
-  background-image: linear-gradient(0deg, #000000, #0e1a3000),
+  background-position: top;
+  background-image: linear-gradient(0deg, #000000, #0000008a),
     url(/public/moutains.jpg);
-  /* background-image: url(/public/moutains.jpg); */
   z-index: 0;
+}
+@media (min-width: 751px) and (max-width: 999px) {
+  .bg::after {
+    background-image: linear-gradient(0deg, #000000, #0e1a3073),
+      url(/public/moutains.jpg);
+    background-size: 150%;
+  }
+}
+@media (min-width: 501px) and (max-width: 750px) {
+  .bg::after {
+    background-image: linear-gradient(0deg, #000000, #0e1a3073),
+      url(/public/moutains.jpg);
+    background-size: 200%;
+  }
+}
+@media (max-width: 500px) {
+  .bg::after {
+    background-image: linear-gradient(0deg, #000000, #0e1a3073),
+      url(/public/moutains.jpg);
+    background-size: 250%;
+  }
 }
 .media {
   display: flex;
@@ -58,4 +79,51 @@
   top: 0px;
   bottom: 0px;
   background-color: aliceblue;
+}
+.section {
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80ch;
+  margin-inline: auto;
+}
+.story {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  font-size: 1.1rem;
+  margin-bottom: 7rem;
+}
+.section * {
+  color: #000000;
+}
+.story .title {
+  font-weight: 400;
+  width: 150%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.story .text {
+  flex-grow: 1;
+  font-weight: 500;
+}
+.numbers {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 7rem;
+}
+.awardName {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.number {
+  font-size: 4rem;
+  font-weight: 600;
+  width: 4ch;
+  text-align: center;
 }

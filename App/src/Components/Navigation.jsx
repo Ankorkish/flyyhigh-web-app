@@ -11,7 +11,6 @@ function Navigation() {
       <div className={styles.mid}>
         <NavLink to="/"> Home </NavLink>
         <NavLink to="/pricing"> Pricing </NavLink>
-        <NavLink to="/product"> Product </NavLink>
         <NavLink to="/app"> App </NavLink>
       </div>
 

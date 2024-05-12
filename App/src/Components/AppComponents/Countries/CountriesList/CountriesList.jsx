@@ -26,8 +26,8 @@ function CountriesList() {
 
   return (
     <div className={styles.countriesList}>
-      {countries.map((el) => (
-        <Country country={el} key={el.country} />
+      {countries.map((el, index) => (
+        <Country country={el} key={el.country} index={index} />
       ))}
     </div>
   );

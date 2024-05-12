@@ -15,8 +15,8 @@ function CitiesList() {
   if (isLoading) return <div>is loading</div>;
   return (
     <div className={styles.cityList}>
-      {cities.map((city) => (
-        <City city={city} key={city.id} />
+      {cities.map((city, index) => (
+        <City city={city} key={city.id} index={index} />
       ))}
     </div>
   );
