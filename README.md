@@ -1,12 +1,12 @@
 This project is a React application that uses Vite as the bundler for fast development and build. It also includes a JSON server to mock backend data.
 
-### Installation
-## Clone the repository
+## Installation
+### Clone the repository
 Clone this repository to your local machine:
 
 ```
 git clone <repository-url>
-cd <project-directory>
+cd app
 ```
 
 Make sure to install all the required dependencies using npm:
@@ -15,15 +15,15 @@ npm install
 
 ```
 
-### Running the Project
-## Start the JSON server
-Open a terminal and run:
+## Running the Project
+### Start the JSON server
+With opeend project in terminal:
 ```
 npm run server
 
 ```
 
-## Start the development server
+### Start the development server
 Open another terminal and run:
 ```
 npm run dev
