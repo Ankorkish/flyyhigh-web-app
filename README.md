@@ -73,8 +73,7 @@ npm run server
 ```
 
 ### Start the development server
-make shreyou are still in ... flyyhigh-web-app/App folder and
-Open another terminal and run:
+Open another terminal and run: (make shure you are also in ...flyyhigh-web-app/App folder)
 ```
 npm run dev
 ```
