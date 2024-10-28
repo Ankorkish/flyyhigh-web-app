@@ -15,7 +15,6 @@ cd flyyhigh-web-app/App
 Make sure to install all the required dependencies using npm:
 ```
 npm install
-
 ```
 
 ## Running the Project
@@ -23,13 +22,11 @@ npm install
 With opeend project in terminal:
 ```
 npm run server
-
 ```
 
 ### Start the development server
 Open another terminal and run:
 ```
 npm run dev
-
 ```
 This command will start the Vite development server. Open your browser and navigate to http://localhost:3000 (or the port shown in the terminal) to view the application.
