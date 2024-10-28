@@ -6,7 +6,10 @@ Clone this repository to your local machine:
 
 ```
 git clone https://github.com/Ankorkish/flyyhigh-web-app.git
-cd app
+```
+
+```
+cd flyyhigh-web-app/App
 ```
 
 Make sure to install all the required dependencies using npm:
