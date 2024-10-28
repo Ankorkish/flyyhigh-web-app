@@ -63,7 +63,6 @@ cd flyyhigh-web-app/App
 Make sure to install all the required dependencies using npm:
 ```
 npm install
-
 ```
 
 ## Running the Project
