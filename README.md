@@ -5,7 +5,7 @@ This project is a React application that uses Vite as the bundler for fast devel
 Clone this repository to your local machine:
 
 ```
-git clone <repository-url>
+gh repo clone Ankorkish/flyyhigh-web-app
 cd app
 ```
 
